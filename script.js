@@ -14,9 +14,15 @@ diceEl.classList.add('hidden');
 //Rolling dice functionallity
 btnRoll.addEventListener('click', function () {
   // 1. Generating a random dice roll
-  const dice = Math.trunc(Math.random() * 6) + 1;
+  let dice = Math.trunc(Math.random() * 6) + 1;
   // 2. diplay dice
   diceEl.classList.remove('hidden');
-  diceEl.src = 'dice-${dice}.png';
+  /*****************************************************************************
+   you need to enclose these varaiable in backtick not normal tick """" ALTGR + 7
+  *****************************************************************************/
+  diceEl.src = `dice-${dice}.png`;
+  //   console.log(diceEl.src);
+  //   console.log(dice);
   //3. Check for rolled 1: if true; switch to next player
+
 });
