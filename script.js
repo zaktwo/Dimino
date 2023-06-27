@@ -13,7 +13,7 @@ const player1 = document.querySelector('.player--0');
 const player2 = document.querySelector('.player--1');
 const active = document.querySelector('.player--active');
 const currentPlayer = document.querySelector('.player');
-//variables 
+
 // you can create an init function that have all the variables initilazed in it
 /*
 let scores, currentScore, activePlayer, playing;
@@ -31,7 +31,8 @@ declare it outside
 init();
 and use it inside the new game button
 */
-const scores = [0, 0];
+//variables 
+let scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
@@ -79,7 +80,7 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     // check if player's score is >=100
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 10) {
       playing = false;
       document
         .querySelector(`.player--${activePlayer}`)
@@ -99,6 +100,7 @@ btnNew.addEventListener('click', function () {
   score1El.textContent = 0;
   currentScorre0.textContent = 0;
   currentScorre1.textContent = 0;
+  
   if (
     document
       .querySelector(`.player--${activePlayer}`)
@@ -111,6 +113,5 @@ btnNew.addEventListener('click', function () {
   player1.classList.add('player--active');
   scores = [0, 0];
   currentScore = 0;
-  activePlayer = 0;
-  playing = true;
+  playing =true;
 });
